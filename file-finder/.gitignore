@@ -1,6 +1,6 @@
 .DS_Store
 .thumbs.db
 node_modules
-products
-products/*
+items
+items/*
 *.zip

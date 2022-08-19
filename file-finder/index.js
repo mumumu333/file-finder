@@ -9,17 +9,19 @@ const _ = require('lodash')
  
 const dirname = __dirname;
 
-let csv = fs.readFileSync('products.csv')
-let products = parse(csv, {
+let csv = fs.readFileSync('items.csv')
+let items = parse(csv, {
   columns: false,
 })
 
-products = _.flattenDeep(products)
+items = _.flattenDeep(items)
 
 finder.on('directory', function (dir, stat, stop) {
-  products.forEach((serial_no) => {
-    if (dir.indexOf(serial_no) !== -1) {
-      fs.copy(path.resolve(dir), dirname + '/products/' + serial_no, function (err) {
+  items.forEach((item_name) => {
+    if (dir.indexOf(item_name) !== -1) {
+      let foldername = path.basename(dir)
+
+      fs.copy(path.resolve(dir), `${dirname}/items/${item_name}/${foldername}`, function (err) {
         console.log(path.resolve(dir))
       });
     }
@@ -27,11 +29,11 @@ finder.on('directory', function (dir, stat, stop) {
 })
  
 finder.on('file', function (file, stat) {
-  products.forEach((serial_no) => {
-    if (file.indexOf(serial_no) !== -1) {
+  items.forEach((item_name) => {
+    if (file.indexOf(item_name) !== -1) {
       let filename = path.basename(file)
 
-      fs.copy(path.resolve(file), `${dirname}/products/${serial_no}/${filename}`, function (err) {
+      fs.copy(path.resolve(file), `${dirname}/items/${item_name}/${filename}`, function (err) {
         console.log(path.resolve(file))
       });
     }
