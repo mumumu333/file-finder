@@ -1,0 +1,19 @@
+{
+  "name": "file-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^6.0.5",
+    "findit": "^2.0.0",
+    "fs-extra": "^10.1.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3"
+  }
+}
