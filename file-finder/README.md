@@ -15,6 +15,7 @@
 <br><br>
 # 使い方
 <br>1. items.csvをテキストエディタで開き、検索したい名前が含まれたフォルダ及びファイル名を入れる。複数検索の場合は改行区切りにする。
+![2022-08-20](https://user-images.githubusercontent.com/97781019/185735692-7bac5713-1ce4-4a36-9e2c-866b389171fa.jpg)
 
 <br>2. file-finderのディレクトリに移動し、下記コマンドを入力。 検索が終わったらコマンドに検索結果とかかった時間が表示される。
 
@@ -25,5 +26,6 @@
 <b><pre>$node --max-old-space-size=4096 index.js 検索したいディレクトリ名</pre></b>
 
 <br>3. itemsフォルダ内に該当のファイルとフォルダーがコピーされる。
+![2022-08-20 (1)](https://user-images.githubusercontent.com/97781019/185736160-71594c99-fc56-47be-bb6d-7db0b820b860.png)
 
 
