@@ -19,9 +19,7 @@ items = _.flattenDeep(items)
 finder.on('directory', function (dir, stat, stop) {
   items.forEach((item_name) => {
     if (dir.indexOf(item_name) !== -1) {
-      let foldername = path.basename(dir)
-
-      fs.copy(path.resolve(dir), `${dirname}/items/${item_name}/${foldername}`, function (err) {
+      fs.copy(path.resolve(dir), `${dirname}/items/${item_name}`, function (err) {
         console.log(path.resolve(dir))
       });
     }
